@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>La bande à Dédé!</title>
+    <meta name="description" content="Bienvenue à la taverne de Dédé! Un petit jeux de dé simple et ludique pour passer le temps.">
+    <link rel="stylesheet" href="style.css">   
+    <meta charset="utf-8">
+
+<!-- GoogleFont -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+  
+  </head>
+  
+  <body>
+ 
+    <div id="avertissement">
+      <p>Merci d'utilisez votre smartphone en paysage.</p>
+    </div>
+    
+<!--Image de fond d'écran-->
+    <img class="background" src="./images/Taverne.webp">
+
+<!--Titre avec bouton nouvelle partie-->
+    <header class="header wrapper">
+      <h1 class="titre">La Bande à DéDé!</h1>
+      <button id="new">Nouvelle partie</button>
+      
+    </header>
+    
+<!--Section des deux cadres joueurs-->
+
+    <button id="bouton-regles">Règles du jeux</button>
+    <section class="joueurs wrapper">
+
+<!--Cadre des scores joueur 1-->
+
+      <div class="j1">
+        <h3 class="nom1">Joueur 1</h3>
+        <p>Score</p>
+        <h2 id="score1">0</h2>
+
+        <div class="stock">
+          <p>Stock</p>
+          <h4 id="point1">0</h4>
+        </div>
+      </div>
+
+<!--Création du dé-->
+<div class="container">
+  <div class="cube">
+    <div class="face front"><img src="images/1.jpg" alt=""></div>
+    <div class="face back"><img src="images/2.jpg" alt=""></div>
+    <div class="face right"><img src="images/3.jpg" alt=""></div>
+    <div class="face left"><img src="images/4.jpg" alt=""></div>
+    <div class="face top"><img src="images/5.jpg" alt=""></div>
+    <div class="face bottom"><img src="images/6.jpg" alt=""></div>
+  </div>
+</div>
+      
+<!--Cadre des scores joueur 2-->
+
+    <div class="j2">
+      <h3 class="nom2">Joueur 2</h3>
+      <p>Score</p>
+      <h2 id="score2">0</h2>
+      <div class="stock">
+        <p>Stock</p>
+        <h4 id="point2">0</h4>
+      </div>
+    </div>
+
+  </section>
+
+<!--Boutons du jeux-->
+
+    <div class="boutons wrapper">
+      <img src="">
+      <button id="bouton-jeux">Lancer les dés!</button>
+      <button id="bouton-val">Stocker les points</button>
+    </div>
+    <div id="notification">
+      <p>C'est au joueur suivant!</p>
+    </div>
+
+<!--Script javaSript-->
+
+    <script src="./script.js"></script>
+
+  </body>
+
+</html>

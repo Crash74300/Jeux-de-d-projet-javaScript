@@ -1,0 +1,280 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Image de fond*/
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+}
+
+/*En tête qui regroupe le titre et le bouton pour lancer une nouvelle partie*/
+
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Titre de la page*/
+
+.titre{
+  width: auto;
+  height: 40px;
+  z-index: 1;
+  text-decoration: underline;
+}
+
+/*Style général des boutons*/
+
+button{
+  width: auto;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+
+/*Transformation bouton nouvelle partie au survol*/
+
+#new:hover{
+  width: auto;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1;
+  margin: 10px;
+  background: rgba(237, 57, 42, 1);
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px black;
+  transform: rotate(2deg) scale(1.2);
+  
+}
+
+/*Section regroupant les 2 joueurs*/
+
+.joueurs{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*Disposition du cadre joueur 1*/
+
+.j1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 120px;
+  height: 220px;
+  border: solid 1px black;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px black;
+}
+
+/*Disposition du cadre joueur 2*/
+
+.j2{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 120px;
+  height: 220px;
+  border: solid 1px black;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px black;
+}
+
+
+/*Disposition des éléments des cadres joueurs*/
+
+.nom{
+  position: relative;
+  margin: 20px;
+}
+
+.score{
+  position: relative;
+}
+
+.stock{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 20px;
+  padding: 5px; 
+}
+
+/*Bouton de jeux*/
+
+.boutons{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  align-items: center;
+
+}
+
+#bouton-regles{
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#bouton-regles:hover{
+  background: orangered;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px black;
+  transform: scale(1.2);
+  
+}
+
+/*Transformation des boutons du jeux au survol*/
+
+.boutons button:hover{
+  width: auto;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1;
+  margin: 10px;
+  background: rgba(43, 175, 70, 1);
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px black;
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 750px) {
+  
+  .j1{
+
+    width: 80px;
+    height: 150px;
+ 
+  }
+  
+  /*Disposition du cadre joueur 2*/
+  
+  .j2{
+    width: 80px;
+    height: 150px;
+  }
+  
+}
+
+/*Notification de changement de joueur*/
+
+#notification {
+  position: fixed;
+  bottom: -5rem;
+  transition: all 1.2s;
+  color: #ff4754;
+  background: #000;
+  width: 300px;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.2rem;
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+#notification.show {
+  bottom: 2rem;
+}
+
+/*Empêche de tenir un smartphone en portrait*/
+
+#avertissement {
+	display: none;
+}
+ @media only screen and (orientation:portrait) {
+.wrapper {
+	display: none;
+}
+.background{
+  display: none;
+}
+body{
+  background: black;
+}
+#avertissement {
+	display: block;
+  text-align: center;
+  margin: auto;
+  margin-top: 50%;
+  width: 80%;
+  font-size: 50px;
+  color: white;
+}
+}
+ @media only screen and (orientation:landscape) {
+#avertissement {
+	display: none;
+}
+}
+
+/*Dé*/
+
+.container {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  perspective: 1000px;
+  margin: 100px auto 0;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(25px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(25px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+
+.front {
+  transform: rotateX(0deg) translateZ(25px);
+}
+.back {
+  transform: rotateX(-180deg) translateZ(25px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
